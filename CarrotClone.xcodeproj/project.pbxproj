@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		4015468626A6F4EF00A307AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015468526A6F4EF00A307AC /* AppDelegate.swift */; };
 		4015468826A6F4EF00A307AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015468726A6F4EF00A307AC /* SceneDelegate.swift */; };
-		4015468A26A6F4EF00A307AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015468926A6F4EF00A307AC /* ViewController.swift */; };
-		4015468D26A6F4EF00A307AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4015468B26A6F4EF00A307AC /* Main.storyboard */; };
+		4015468A26A6F4EF00A307AC /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015468926A6F4EF00A307AC /* HomeVC.swift */; };
 		4015468F26A6F4F100A307AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4015468E26A6F4F100A307AC /* Assets.xcassets */; };
 		4015469226A6F4F100A307AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4015469026A6F4F100A307AC /* LaunchScreen.storyboard */; };
 		4015469D26A6F4F100A307AC /* CarrotCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015469C26A6F4F100A307AC /* CarrotCloneTests.swift */; };
 		401546A826A6F4F100A307AC /* CarrotCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546A726A6F4F100A307AC /* CarrotCloneUITests.swift */; };
+		401546BD26A6F74600A307AC /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546BC26A6F74600A307AC /* BaseVC.swift */; };
+		401546C026A6F84D00A307AC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546BF26A6F84D00A307AC /* Model.swift */; };
+		401546C326A6F87300A307AC /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546C226A6F87300A307AC /* NetworkRepository.swift */; };
+		401546C726A6F8D800A307AC /* CarrotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546C626A6F8D800A307AC /* CarrotService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +41,7 @@
 		4015468226A6F4EF00A307AC /* CarrotClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarrotClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4015468526A6F4EF00A307AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4015468726A6F4EF00A307AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4015468926A6F4EF00A307AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4015468C26A6F4EF00A307AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4015468926A6F4EF00A307AC /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		4015468E26A6F4F100A307AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4015469126A6F4F100A307AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4015469326A6F4F100A307AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		401546A326A6F4F100A307AC /* CarrotCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarrotCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		401546A726A6F4F100A307AC /* CarrotCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotCloneUITests.swift; sourceTree = "<group>"; };
 		401546A926A6F4F100A307AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		401546BC26A6F74600A307AC /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		401546BF26A6F84D00A307AC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		401546C226A6F87300A307AC /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
+		401546C626A6F8D800A307AC /* CarrotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,12 @@
 		4015468426A6F4EF00A307AC /* CarrotClone */ = {
 			isa = PBXGroup;
 			children = (
-				4015468526A6F4EF00A307AC /* AppDelegate.swift */,
-				4015468726A6F4EF00A307AC /* SceneDelegate.swift */,
-				4015468926A6F4EF00A307AC /* ViewController.swift */,
-				4015468B26A6F4EF00A307AC /* Main.storyboard */,
-				4015468E26A6F4F100A307AC /* Assets.xcassets */,
-				4015469026A6F4F100A307AC /* LaunchScreen.storyboard */,
-				4015469326A6F4F100A307AC /* Info.plist */,
+				401546BA26A6F6C700A307AC /* Resources */,
+				401546B926A6F6B700A307AC /* Supportings */,
+				401546B526A6F62D00A307AC /* Application */,
+				401546B726A6F63F00A307AC /* DataLayer */,
+				401546B826A6F64C00A307AC /* BusinessLayer */,
+				401546B626A6F63800A307AC /* PresentationLayer */,
 			);
 			path = CarrotClone;
 			sourceTree = "<group>";
@@ -126,6 +131,90 @@
 				401546A926A6F4F100A307AC /* Info.plist */,
 			);
 			path = CarrotCloneUITests;
+			sourceTree = "<group>";
+		};
+		401546B526A6F62D00A307AC /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4015468526A6F4EF00A307AC /* AppDelegate.swift */,
+				4015468726A6F4EF00A307AC /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		401546B626A6F63800A307AC /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				401546BE26A6F74A00A307AC /* Home */,
+				401546BB26A6F73E00A307AC /* Base */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		401546B726A6F63F00A307AC /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				401546C426A6F87700A307AC /* Model */,
+				401546C126A6F86200A307AC /* NetworkRepository */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		401546B826A6F64C00A307AC /* BusinessLayer */ = {
+			isa = PBXGroup;
+			children = (
+				401546C626A6F8D800A307AC /* CarrotService.swift */,
+			);
+			path = BusinessLayer;
+			sourceTree = "<group>";
+		};
+		401546B926A6F6B700A307AC /* Supportings */ = {
+			isa = PBXGroup;
+			children = (
+				4015469326A6F4F100A307AC /* Info.plist */,
+			);
+			path = Supportings;
+			sourceTree = "<group>";
+		};
+		401546BA26A6F6C700A307AC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4015468E26A6F4F100A307AC /* Assets.xcassets */,
+				4015469026A6F4F100A307AC /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		401546BB26A6F73E00A307AC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				401546BC26A6F74600A307AC /* BaseVC.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		401546BE26A6F74A00A307AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4015468926A6F4EF00A307AC /* HomeVC.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		401546C126A6F86200A307AC /* NetworkRepository */ = {
+			isa = PBXGroup;
+			children = (
+				401546C226A6F87300A307AC /* NetworkRepository.swift */,
+			);
+			path = NetworkRepository;
+			sourceTree = "<group>";
+		};
+		401546C426A6F87700A307AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				401546BF26A6F84D00A307AC /* Model.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +322,6 @@
 			files = (
 				4015469226A6F4F100A307AC /* LaunchScreen.storyboard in Resources */,
 				4015468F26A6F4F100A307AC /* Assets.xcassets in Resources */,
-				4015468D26A6F4EF00A307AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +346,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4015468A26A6F4EF00A307AC /* ViewController.swift in Sources */,
+				401546C326A6F87300A307AC /* NetworkRepository.swift in Sources */,
+				401546C026A6F84D00A307AC /* Model.swift in Sources */,
+				4015468A26A6F4EF00A307AC /* HomeVC.swift in Sources */,
 				4015468626A6F4EF00A307AC /* AppDelegate.swift in Sources */,
 				4015468826A6F4EF00A307AC /* SceneDelegate.swift in Sources */,
+				401546BD26A6F74600A307AC /* BaseVC.swift in Sources */,
+				401546C726A6F8D800A307AC /* CarrotService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,14 +388,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4015468B26A6F4EF00A307AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4015468C26A6F4EF00A307AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4015469026A6F4F100A307AC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -438,7 +522,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 85329TR25G;
-				INFOPLIST_FILE = CarrotClone/Info.plist;
+				INFOPLIST_FILE = CarrotClone/Supportings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.havi.CarrotClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -457,7 +541,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 85329TR25G;
-				INFOPLIST_FILE = CarrotClone/Info.plist;
+				INFOPLIST_FILE = CarrotClone/Supportings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +549,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.havi.CarrotClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
