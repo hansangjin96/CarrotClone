@@ -7,10 +7,14 @@
 
 import Foundation
 
+import RxSwift
+
 protocol CarrotServiceType {
-    
+    func fetchCarrot() -> Observable<Carrot>
 }
 
 final class CarrotService: CarrotServiceType {
-    
+    func fetchCarrot() -> Observable<Carrot> {
+        return .empty()
+    }
 }

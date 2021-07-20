@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window: UIWindow = UIWindow(windowScene: scene)
         
         self.window = window
-        let vc: HomeVC = .init() 
+        let vc: HomeVC = .init(with: .init(carrotService: CarrotService())) 
         let navi: UINavigationController = .init(rootViewController: vc)
         window.rootViewController = navi
         window.makeKeyAndVisible()

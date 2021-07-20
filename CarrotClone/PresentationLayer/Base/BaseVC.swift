@@ -7,6 +7,23 @@
 
 import UIKit
 
+import Then
+import RxSwift
+import SnapKit
+
 class BaseVC: UIViewController {
     
+    final var disposeBag: DisposeBag = .init()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        view.backgroundColor = .white
+        
+        setupUI()
+    }
+    
+    func setupUI() {
+        
+    }
 }

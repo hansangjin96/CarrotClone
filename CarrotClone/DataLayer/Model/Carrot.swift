@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct Model: Decodable {
+struct Carrot: Decodable {
     
 }

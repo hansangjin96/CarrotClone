@@ -15,7 +15,7 @@
 		4015469D26A6F4F100A307AC /* CarrotCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015469C26A6F4F100A307AC /* CarrotCloneTests.swift */; };
 		401546A826A6F4F100A307AC /* CarrotCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546A726A6F4F100A307AC /* CarrotCloneUITests.swift */; };
 		401546BD26A6F74600A307AC /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546BC26A6F74600A307AC /* BaseVC.swift */; };
-		401546C026A6F84D00A307AC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546BF26A6F84D00A307AC /* Model.swift */; };
+		401546C026A6F84D00A307AC /* Carrot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546BF26A6F84D00A307AC /* Carrot.swift */; };
 		401546C326A6F87300A307AC /* NetworkRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546C226A6F87300A307AC /* NetworkRepository.swift */; };
 		401546C726A6F8D800A307AC /* CarrotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546C626A6F8D800A307AC /* CarrotService.swift */; };
 		401546CA26A6FAD400A307AC /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 401546C926A6FAD400A307AC /* SnapKit */; };
@@ -27,6 +27,9 @@
 		401546D826A6FB0500A307AC /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 401546D726A6FB0500A307AC /* RxBlocking */; };
 		401546DB26A6FB1C00A307AC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 401546DA26A6FB1C00A307AC /* Quick */; };
 		401546E126A6FB4300A307AC /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 401546E026A6FB4300A307AC /* Nimble */; };
+		401546E426A6FDDE00A307AC /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 401546E326A6FDDE00A307AC /* ReactorKit */; };
+		401546E626A6FE2F00A307AC /* HomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546E526A6FE2F00A307AC /* HomeReactor.swift */; };
+		401546E826A7025A00A307AC /* ResultBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546E726A7025A00A307AC /* ResultBase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,9 +64,11 @@
 		401546A726A6F4F100A307AC /* CarrotCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotCloneUITests.swift; sourceTree = "<group>"; };
 		401546A926A6F4F100A307AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		401546BC26A6F74600A307AC /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
-		401546BF26A6F84D00A307AC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		401546BF26A6F84D00A307AC /* Carrot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carrot.swift; sourceTree = "<group>"; };
 		401546C226A6F87300A307AC /* NetworkRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepository.swift; sourceTree = "<group>"; };
 		401546C626A6F8D800A307AC /* CarrotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotService.swift; sourceTree = "<group>"; };
+		401546E526A6FE2F00A307AC /* HomeReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeReactor.swift; sourceTree = "<group>"; };
+		401546E726A7025A00A307AC /* ResultBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultBase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 				401546CA26A6FAD400A307AC /* SnapKit in Frameworks */,
 				401546D626A6FB0500A307AC /* RxCocoa in Frameworks */,
 				401546D426A6FB0500A307AC /* RxRelay in Frameworks */,
+				401546E426A6FDDE00A307AC /* ReactorKit in Frameworks */,
 				401546CD26A6FAF300A307AC /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				4015468926A6F4EF00A307AC /* HomeVC.swift */,
+				401546E526A6FE2F00A307AC /* HomeReactor.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -230,7 +237,8 @@
 		401546C426A6F87700A307AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				401546BF26A6F84D00A307AC /* Model.swift */,
+				401546BF26A6F84D00A307AC /* Carrot.swift */,
+				401546E726A7025A00A307AC /* ResultBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +265,7 @@
 				401546CF26A6FB0500A307AC /* RxSwift */,
 				401546D326A6FB0500A307AC /* RxRelay */,
 				401546D526A6FB0500A307AC /* RxCocoa */,
+				401546E326A6FDDE00A307AC /* ReactorKit */,
 			);
 			productName = CarrotClone;
 			productReference = 4015468226A6F4EF00A307AC /* CarrotClone.app */;
@@ -341,6 +350,7 @@
 				401546CE26A6FB0500A307AC /* XCRemoteSwiftPackageReference "RxSwift" */,
 				401546D926A6FB1C00A307AC /* XCRemoteSwiftPackageReference "Quick" */,
 				401546DF26A6FB4300A307AC /* XCRemoteSwiftPackageReference "Nimble" */,
+				401546E226A6FDDE00A307AC /* XCRemoteSwiftPackageReference "ReactorKit" */,
 			);
 			productRefGroup = 4015468326A6F4EF00A307AC /* Products */;
 			projectDirPath = "";
@@ -385,12 +395,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				401546C326A6F87300A307AC /* NetworkRepository.swift in Sources */,
-				401546C026A6F84D00A307AC /* Model.swift in Sources */,
+				401546C026A6F84D00A307AC /* Carrot.swift in Sources */,
 				4015468A26A6F4EF00A307AC /* HomeVC.swift in Sources */,
 				4015468626A6F4EF00A307AC /* AppDelegate.swift in Sources */,
 				4015468826A6F4EF00A307AC /* SceneDelegate.swift in Sources */,
+				401546E626A6FE2F00A307AC /* HomeReactor.swift in Sources */,
 				401546BD26A6F74600A307AC /* BaseVC.swift in Sources */,
 				401546C726A6F8D800A307AC /* CarrotService.swift in Sources */,
+				401546E826A7025A00A307AC /* ResultBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -757,6 +769,14 @@
 				minimumVersion = 9.2.0;
 			};
 		};
+		401546E226A6FDDE00A307AC /* XCRemoteSwiftPackageReference "ReactorKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactorKit/ReactorKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -804,6 +824,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 401546DF26A6FB4300A307AC /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
+		};
+		401546E326A6FDDE00A307AC /* ReactorKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 401546E226A6FDDE00A307AC /* XCRemoteSwiftPackageReference "ReactorKit" */;
+			productName = ReactorKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -12,4 +12,4 @@ protocol NetworkRepositoryType {
 
 final class NetworkRepository: NetworkRepositoryType {
     
-} 
+}
