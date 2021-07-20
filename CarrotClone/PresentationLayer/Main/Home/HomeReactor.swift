@@ -18,19 +18,19 @@ final class HomeReactor: Reactor {
     }
     
     enum Mutation {
-        case setCarrot(_ carrot: Carrot)
+        case setCarrots(_ carrots: [Carrot])
     }
     
     struct State {
-        var carrot: Carrot?
+        var carrots: [Carrot]?
     }
     
     // MARK: Property
     
     var initialState: State = .init()
+    let errorResult: PublishSubject<Error> = .init()
     
     private let carrotService: CarrotServiceType
-    private let errorResult: PublishSubject<Error> = .init()
     
     // MARK: Init
     
@@ -53,7 +53,7 @@ final class HomeReactor: Reactor {
                     self.errorResult.onNext(error)
                     return .empty()
                 }
-                .map { Mutation.setCarrot($0) }
+                .map { Mutation.setCarrots($0) }
         }
     }
     
@@ -63,8 +63,8 @@ final class HomeReactor: Reactor {
         var newState = state
         
         switch mutation {
-        case .setCarrot(let carrot):
-            newState.carrot = carrot
+        case .setCarrots(let carrots):
+            newState.carrots = carrots
         }
         
         return newState

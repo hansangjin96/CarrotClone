@@ -13,7 +13,7 @@ typealias HTTPHeaders = [String: String]
 typealias Parameters = [String: Any?]
 
 enum HTTPHeaderFields {
-    static let acceptType: String = "Accept"
+    static let contentType: String = "Content-Type"
     static let json: String = "application/json"
 }
 
@@ -88,7 +88,7 @@ extension Endpoint: EndpointType {
     
     var headers: HTTPHeaders? {
         return [
-            HTTPHeaderFields.acceptType: HTTPHeaderFields.json
+            HTTPHeaderFields.contentType: HTTPHeaderFields.json
         ]
     }
     

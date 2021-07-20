@@ -17,9 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window: UIWindow = UIWindow(windowScene: scene)
         
         self.window = window
-        let vc: HomeVC = .init(with: .init(carrotService: CarrotService(networkRepository: NetworkRepository(with: URLSession(configuration: .default))))) 
-        let navi: UINavigationController = .init(rootViewController: vc)
-        window.rootViewController = navi
+        let tabBar: UITabBarController = MainTabBarController()
+        window.rootViewController = tabBar
         window.makeKeyAndVisible()
     }
 }

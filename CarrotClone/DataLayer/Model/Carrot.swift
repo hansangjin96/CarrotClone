@@ -11,7 +11,7 @@ struct Carrot: Decodable {
     let imageURL: URL
     let title: String
     let location: String
-    let time: Int
+    let time: String
     let ggeulol: Bool
     let price: Int
     let heartCount: Int

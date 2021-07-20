@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 protocol CarrotServiceType {
-    func fetchCarrot() -> Observable<Carrot>
+    func fetchCarrot() -> Observable<[Carrot]>
 }
 
 final class CarrotService: CarrotServiceType {
@@ -21,13 +21,13 @@ final class CarrotService: CarrotServiceType {
         self.networkRepository = networkRepository
     }
     
-    func fetchCarrot() -> Observable<Carrot> {
+    func fetchCarrot() -> Observable<[Carrot]> {
         return networkRepository.requestEndpoint(
             with: .readCarrots, 
-            for: ResultBase<Carrot>.self
+            for: ResultBase<[Carrot]>.self
         )
         .asObservable()
-        .flatMap { result -> Observable<Carrot> in
+        .flatMap { result -> Observable<[Carrot]> in
             if result.errorCode != ResultErrorCode.success.rawValue { return .error(NetworkError.invalidErrorCode) }
             return .just(result.data)
         }        
