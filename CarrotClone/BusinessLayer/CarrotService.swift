@@ -8,6 +8,7 @@
 import Foundation
 
 protocol CarrotServiceType {
+    
 }
 
 final class CarrotService: CarrotServiceType {
