@@ -30,6 +30,7 @@ final class HomeReactor: Reactor {
     var initialState: State = .init()
     
     private let carrotService: CarrotServiceType
+    private let errorResult: PublishSubject<Error> = .init()
     
     // MARK: Init
     
@@ -47,6 +48,11 @@ final class HomeReactor: Reactor {
         switch action {
         case .fetchCarrots:
             return carrotService.fetchCarrot()
+                .catch { [weak self] error in
+                    guard let self = self else { return .empty() }
+                    self.errorResult.onNext(error)
+                    return .empty()
+                }
                 .map { Mutation.setCarrot($0) }
         }
     }
@@ -64,5 +70,5 @@ final class HomeReactor: Reactor {
         return newState
     }
     
-    // MARK: Method
+    // MARK: Method    
 }
