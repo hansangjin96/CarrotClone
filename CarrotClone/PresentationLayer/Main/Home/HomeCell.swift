@@ -7,28 +7,12 @@
 
 import UIKit
 
-// MARK: Protocol
-
-protocol ReusableIdentiable {
-    static var reusableID: String { get }
-}
-
-extension ReusableIdentiable {
-    static var reusableID: String {
-        return String(describing: self)
-    }
-}
-
-extension UITableViewCell: ReusableIdentiable { }
-
-// MARK: HomeCell
-
 final class HomeCell: UITableViewCell {
     
     // MARK: UI Property
     
     private let productImage: UIImageView = .init().then {
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .scaleToFill
         $0.backgroundColor = .systemGray6
     }
     
@@ -74,6 +58,7 @@ final class HomeCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        // 재사용될 때 자신이 가지고 있는 이미지 다운로드 task 캔슬처리
         imageDownloadTask?.cancel()
         
         productImage.image = .none

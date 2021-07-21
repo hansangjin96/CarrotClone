@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Test를 위해 추상화
+/// Test를 위한 추상화 protocol
 protocol URLSessionType {
     func dataTask(
         with request: URLRequest, 
@@ -36,6 +36,7 @@ final class MockURLSessionDataTask: URLSessionDataTask {
     }
 }
 
+/// 실제 API가 없어서 Test를 위한 객체와 가짜 API를 받는 객체를 여기서 생성
 final class MockURLSession: URLSessionType {
     private let isInvalidStatus: Bool
     private let dataTaskFail: Bool
@@ -45,7 +46,6 @@ final class MockURLSession: URLSessionType {
         isInvalidStatus: Bool = false,
         dataTaskFail: Bool = false,
         noData: Bool = false
-        
     ) {
         self.isInvalidStatus = isInvalidStatus
         self.dataTaskFail = dataTaskFail
@@ -86,7 +86,7 @@ final class MockURLSession: URLSessionType {
                 )
             )
         } else {
-            completionHandler(MockURLSession.mockData, response, nil)            
+            completionHandler(MockURLSession.mockData, response, nil)
         }
         
         return dataTask
@@ -97,6 +97,7 @@ final class MockURLSession: URLSessionType {
         return dataTask
     }
     
+    /// TableView에 fake data를 뿌려주기 위해 만든 data
     static var mockData: Data {
         return Data(
         """

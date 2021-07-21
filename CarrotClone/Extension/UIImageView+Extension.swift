@@ -8,10 +8,12 @@
 import UIKit
 
 extension UIImageView {
+    /// 사진을 메모리 캐시에 저장하기 위한 변수
     static let cache: NSCache<NSURL, UIImage> = .init().then {
         $0.countLimit = 100
     }
     
+    /// Image를 다운로드 하기 위한 객체
     private var imageService: ImageServiceType {
         return ImageService()
     }

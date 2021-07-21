@@ -22,7 +22,7 @@ final class HomeReactor: Reactor {
     }
     
     struct State {
-        var carrots: [Carrot]?
+        var carrots: [Carrot] = []
     }
     
     // MARK: Property

@@ -134,7 +134,7 @@ extension HomeVC: View {
     
     private func bindState(reactor: HomeReactor) {
         reactor.state
-            .compactMap(\.carrots)
+            .map(\.carrots)
             .observe(on: MainScheduler.instance)
             .do(onNext: { [weak self] _ in 
                 self?.activityIndicator.stopAnimating()

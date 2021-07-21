@@ -36,6 +36,7 @@
 		401546F826A840F100A307AC /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546F726A840F100A307AC /* ImageService.swift */; };
 		401546FB26A8429300A307AC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546FA26A8429300A307AC /* UIImageView+Extension.swift */; };
 		4015470126A860EE00A307AC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 4015470026A860EE00A307AC /* Quick */; };
+		40271AAC26A87D000001BF8D /* Cell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40271AAB26A87D000001BF8D /* Cell+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		401546F426A72ED500A307AC /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		401546F726A840F100A307AC /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		401546FA26A8429300A307AC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		40271AAB26A87D000001BF8D /* Cell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				401546FA26A8429300A307AC /* UIImageView+Extension.swift */,
+				40271AAB26A87D000001BF8D /* Cell+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				401546EF26A728AF00A307AC /* MainTabBarController.swift in Sources */,
 				4015468626A6F4EF00A307AC /* AppDelegate.swift in Sources */,
 				401546EA26A7031A00A307AC /* Endpoint.swift in Sources */,
+				40271AAC26A87D000001BF8D /* Cell+Extension.swift in Sources */,
 				401546F526A72ED500A307AC /* HomeCell.swift in Sources */,
 				4015468826A6F4EF00A307AC /* SceneDelegate.swift in Sources */,
 				401546E626A6FE2F00A307AC /* HomeReactor.swift in Sources */,
