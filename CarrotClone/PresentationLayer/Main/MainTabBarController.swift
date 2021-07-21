@@ -61,6 +61,7 @@ final class MainTabBarController: UITabBarController {
     }
     
     private func setupViewControllers() {
+        self.tabBar.tintColor = .black
         let tabs: [UIViewController] = Tab.allCases.map { tab in 
             switch tab {
             case .home:

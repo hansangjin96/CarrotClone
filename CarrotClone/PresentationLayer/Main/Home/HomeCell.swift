@@ -64,6 +64,16 @@ final class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        productImage.image = .none
+        titleLabel.text = .none
+        timeLabel.text = .none
+        locationLabel.text = .none
+        priceLabel.text = .none
+    }
+    
     // MARK: UI
     
     private func setupUI() {

@@ -24,8 +24,36 @@ final class HomeVC: BaseVC {
         $0.color = .systemBlue
     }
     
-    // MARK: Property
+    private let addCarrotButton: UIButton = .init().then {
+        $0.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
+        $0.tintColor = .orange
+        $0.contentMode = .scaleAspectFill
+        $0.contentHorizontalAlignment = .fill
+        $0.contentVerticalAlignment = .fill
+    }
     
+    private let alarmButtonItem: UIBarButtonItem = .init(customView: UIButton().then {
+        $0.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
+        $0.frame = .init(x: 0, y: 0, width: 30, height: 30)
+    })
+    
+    private let categoryButtonItem: UIBarButtonItem = .init(customView: UIButton().then {
+        $0.setImage(UIImage(systemName: "list.bullet"), for: .normal)
+        $0.frame = .init(x: 0, y: 0, width: 30, height: 30)
+    })
+    
+    private let searchButtonItem: UIBarButtonItem = .init(customView: UIButton().then {
+        $0.setImage(UIImage(systemName: "bell"), for: .normal)
+        $0.frame = .init(x: 0, y: 0, width: 30, height: 30)
+    })
+    
+    private let locationButtonItem: UIBarButtonItem = .init(
+        title: "문정동", 
+        style: .plain,
+        target: nil,
+        action: nil
+    )
+        
     // MARK: Init
     
     init(with reactor: HomeReactor) {
@@ -50,6 +78,19 @@ final class HomeVC: BaseVC {
     // MARK: UI
     
     override func setupUI() {
+        setupNavigation()
+        setupViews()
+    }
+    
+    private func setupNavigation() {
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.isTranslucent = false
+        
+        navigationItem.rightBarButtonItems = [searchButtonItem, categoryButtonItem, alarmButtonItem]
+        navigationItem.leftBarButtonItem = locationButtonItem
+    }
+    
+    private func setupViews() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
@@ -59,6 +100,12 @@ final class HomeVC: BaseVC {
         activityIndicator.snp.makeConstraints {
             $0.size.equalTo(50)
             $0.center.equalToSuperview()
+        }
+        
+        view.addSubview(addCarrotButton)
+        addCarrotButton.snp.makeConstraints {
+            $0.bottom.right.equalTo(view.safeAreaLayoutGuide).inset(15)
+            $0.size.equalTo(50)
         }
     }
 }
