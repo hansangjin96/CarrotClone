@@ -68,5 +68,6 @@ final class NetworkRepository: NetworkRepositoryType {
             
             return Disposables.create()
         }
+        .delay(.seconds(1), scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
     }
 }

@@ -20,6 +20,10 @@ final class HomeVC: BaseVC {
         $0.rowHeight = 120
     }
     
+    private let activityIndicator: UIActivityIndicatorView = .init(style: .medium).then {
+        $0.color = .systemBlue
+    }
+    
     // MARK: Property
     
     // MARK: Init
@@ -50,6 +54,12 @@ final class HomeVC: BaseVC {
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide.snp.edges)
         }
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints {
+            $0.size.equalTo(50)
+            $0.center.equalToSuperview()
+        }
     }
 }
 
@@ -65,6 +75,9 @@ extension HomeVC: View {
     
     private func bindAction(reactor: HomeReactor) {
         self.rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+            .do(onNext: { [weak self] _ in 
+                self?.activityIndicator.startAnimating()
+            })
             .map { _ in Reactor.Action.fetchCarrots }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -76,6 +89,9 @@ extension HomeVC: View {
         reactor.state
             .compactMap(\.carrots)
             .observe(on: MainScheduler.instance)
+            .do(onNext: { [weak self] _ in 
+                self?.activityIndicator.stopAnimating()
+            })
             .bind(to: tableView.rx.items(
                 cellIdentifier: HomeCell.reusableID, 
                 cellType: HomeCell.self

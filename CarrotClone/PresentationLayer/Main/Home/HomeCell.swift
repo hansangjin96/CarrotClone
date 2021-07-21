@@ -48,6 +48,10 @@ final class HomeCell: UITableViewCell {
         $0.font = .systemFont(ofSize: 13, weight: .bold)
     }
     
+    private let activityIndicator: UIActivityIndicatorView = .init(style: .medium).then { 
+        $0.color = .systemBlue
+    }
+    
     // MARK: Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -71,10 +75,16 @@ final class HomeCell: UITableViewCell {
             $0.width.equalTo(productImage.snp.height).multipliedBy(1)
         }
         
+        productImage.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.size.equalToSuperview().dividedBy(5)
+        }
+        
         contentView.addSubview(titleLabel)
         titleLabel.snp.makeConstraints {
             $0.left.equalTo(productImage.snp.right).offset(10)
-            $0.top.equalTo(productImage.snp.top)
+            $0.top.equalTo(productImage.snp.top).offset(10)
         }
         
         contentView.addSubview(locationLabel)
@@ -101,8 +111,10 @@ final class HomeCell: UITableViewCell {
     func bind(with carrot: Carrot) {
         // TODO: ImageHandling
         do {
+            self.activityIndicator.startAnimating()
             let imageData = try Data(contentsOf: carrot.imageURL)
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.activityIndicator.stopAnimating()
                 self.productImage.image = UIImage(data: imageData)
             }
             
