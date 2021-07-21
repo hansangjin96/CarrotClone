@@ -73,22 +73,22 @@ final class MainTabBarController: UITabBarController {
                 navi.tabBarItem = tab.tabBarItem
                 return navi
             case .life: 
-                let vc: UIViewController = .init()
+                let vc: BaseVC = .init()
                 let navi: UINavigationController = .init(rootViewController: vc)
                 navi.tabBarItem = tab.tabBarItem
                 return navi
             case .nearBy: 
-                let vc: UIViewController = .init()
+                let vc: BaseVC = .init()
                 let navi: UINavigationController = .init(rootViewController: vc)
                 navi.tabBarItem = tab.tabBarItem
                 return navi
             case .chatting: 
-                let vc: UIViewController = .init()
+                let vc: BaseVC = .init()
                 let navi: UINavigationController = .init(rootViewController: vc)
                 navi.tabBarItem = tab.tabBarItem
                 return navi
             case .setting: 
-                let vc: UIViewController = .init()
+                let vc: BaseVC = .init()
                 let navi: UINavigationController = .init(rootViewController: vc)
                 navi.tabBarItem = tab.tabBarItem
                 return navi

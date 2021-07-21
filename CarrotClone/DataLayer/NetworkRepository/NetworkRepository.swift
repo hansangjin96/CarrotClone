@@ -56,8 +56,6 @@ final class NetworkRepository: NetworkRepositoryType {
                     return
                 }
                 
-                try? Test.test(data: data)
-                
                 guard let result = try? JSONDecoder().decode(T.self, from: data) else {
                     single(.failure(NetworkError.unableToDecode))
                     return
@@ -68,20 +66,7 @@ final class NetworkRepository: NetworkRepositoryType {
             
             task.resume()
             
-            return Disposables.create {
-//                task.cancel()
-            }
-        }
-    }
-}
-
-class Test {
-    static func test(data: Data) throws {
-        do {
-            let result = try JSONDecoder().decode(ResultBase<[Carrot]>.self, from: data)
-            print(result)
-        } catch {
-            print(error)
+            return Disposables.create()
         }
     }
 }

@@ -27,9 +27,11 @@ final class CarrotService: CarrotServiceType {
             for: ResultBase<[Carrot]>.self
         )
         .asObservable()
-        .flatMap { result -> Observable<[Carrot]> in
-            if result.errorCode != ResultErrorCode.success.rawValue { return .error(NetworkError.invalidErrorCode) }
+        .flatMapLatest { result -> Observable<[Carrot]> in
+            if result.errorCode != ResultErrorCode.success.rawValue { 
+                return .error(NetworkError.invalidErrorCode)
+            }
             return .just(result.data)
-        }        
+        }
     }
 }

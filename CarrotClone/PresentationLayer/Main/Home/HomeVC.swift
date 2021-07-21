@@ -64,7 +64,7 @@ extension HomeVC: View {
     // MARK: Action
     
     private func bindAction(reactor: HomeReactor) {
-        rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+        self.rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .map { _ in Reactor.Action.fetchCarrots }
             .bind(to: reactor.action)
             .disposed(by: disposeBag)
@@ -75,6 +75,7 @@ extension HomeVC: View {
     private func bindState(reactor: HomeReactor) {
         reactor.state
             .compactMap(\.carrots)
+            .observe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items(
                 cellIdentifier: HomeCell.reusableID, 
                 cellType: HomeCell.self
@@ -84,36 +85,11 @@ extension HomeVC: View {
             .disposed(by: disposeBag)
         
         reactor.errorResult
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: {
+                // TODO: ErrorHandling
                 print($0)
             })
             .disposed(by: disposeBag)
     }
-} 
-
-//// MARK: Delegate
-//
-//extension HomeVC: UITableViewDelegate {
-//    
-//}
-//
-//// MARK: Datasource
-//
-//extension HomeVC: UITableViewDataSource {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return reactor?.currentState.carrots?.count ?? 0
-//    }
-//    
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeCell.reusableID, for: indexPath) as? HomeCell,
-//              let reactor = reactor,
-//              let carrots = reactor.currentState.carrots
-//        else {
-//            fatalError()
-//        }
-//        
-//        cell.bind(with: carrots[indexPath.row])
-//        
-//        return cell
-//    }
-//}
+}

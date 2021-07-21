@@ -49,7 +49,7 @@ final class MockURLSession: URLSessionType {
               "heart_count": 0
             },
             {
-              "image_url": "https://lh3.googleusercontent.com/proxy/9kHdWsvMWly4tZthXYARQsgJrqeuYlqGe0JwhfaXhOBiasfWoikjaEefmEDkBH3IswkLCY1wyrQ9uh2oWOOh2I9HS14IzolEQ7buwIm9zCERvp1Gag",
+              "image_url": "http://www.palnews.co.kr/news/photo/201801/92969_25283_5321.jpg",
               "title": "여아 원피스",
               "location": "송파구 오금동",
               "time": "20초 전",

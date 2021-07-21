@@ -27,7 +27,10 @@ final class HomeCell: UITableViewCell {
     
     // MARK: UI Property
     
-    private let productImage: UIImageView = .init()
+    private let productImage: UIImageView = .init().then {
+        $0.contentMode = .scaleAspectFit
+        $0.backgroundColor = .systemGray6
+    }
     
     private let titleLabel: UILabel = .init().then {
         $0.font = .systemFont(ofSize: 12)
@@ -60,7 +63,7 @@ final class HomeCell: UITableViewCell {
     // MARK: UI
     
     private func setupUI() {
-        contentView.backgroundColor = .yellow
+        contentView.backgroundColor = .white
         
         contentView.addSubview(productImage)
         productImage.snp.makeConstraints {
@@ -96,6 +99,7 @@ final class HomeCell: UITableViewCell {
     // MARK: Bind
     
     func bind(with carrot: Carrot) {
+        // TODO: ImageHandling
         do {
             let imageData = try Data(contentsOf: carrot.imageURL)
             DispatchQueue.main.async {
@@ -105,7 +109,6 @@ final class HomeCell: UITableViewCell {
         } catch {
             print(error)
         }
-        productImage.image = UIImage()
         titleLabel.text = carrot.title
         locationLabel.text = carrot.location
         timeLabel.text = "* \(carrot.time)"
