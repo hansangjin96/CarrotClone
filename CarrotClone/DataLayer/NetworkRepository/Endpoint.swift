@@ -34,7 +34,7 @@ enum HTTPTask {
 enum NetworkError: Error {
     case noSelf
     case urlToUrlRequest
-    case dataTask
+    case dataTaskFail
     case responseCasting
     case invalidStatus
     case noData

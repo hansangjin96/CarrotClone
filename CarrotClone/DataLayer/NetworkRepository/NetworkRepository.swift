@@ -36,7 +36,7 @@ final class NetworkRepository: NetworkRepositoryType {
             
             let task = self.session.dataTask(with: request) { data, response, error in
                 guard error == nil else {
-                    single(.failure(NetworkError.dataTask))
+                    single(.failure(NetworkError.dataTaskFail))
                     return
                 }
                 

@@ -12,7 +12,7 @@
 		4015468A26A6F4EF00A307AC /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015468926A6F4EF00A307AC /* HomeVC.swift */; };
 		4015468F26A6F4F100A307AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4015468E26A6F4F100A307AC /* Assets.xcassets */; };
 		4015469226A6F4F100A307AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4015469026A6F4F100A307AC /* LaunchScreen.storyboard */; };
-		4015469D26A6F4F100A307AC /* CarrotCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015469C26A6F4F100A307AC /* CarrotCloneTests.swift */; };
+		4015469D26A6F4F100A307AC /* NetworkRepositoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015469C26A6F4F100A307AC /* NetworkRepositoryTest.swift */; };
 		401546A826A6F4F100A307AC /* CarrotCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546A726A6F4F100A307AC /* CarrotCloneUITests.swift */; };
 		401546BD26A6F74600A307AC /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546BC26A6F74600A307AC /* BaseVC.swift */; };
 		401546C026A6F84D00A307AC /* Carrot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546BF26A6F84D00A307AC /* Carrot.swift */; };
@@ -25,7 +25,6 @@
 		401546D426A6FB0500A307AC /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 401546D326A6FB0500A307AC /* RxRelay */; };
 		401546D626A6FB0500A307AC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 401546D526A6FB0500A307AC /* RxCocoa */; };
 		401546D826A6FB0500A307AC /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 401546D726A6FB0500A307AC /* RxBlocking */; };
-		401546DB26A6FB1C00A307AC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 401546DA26A6FB1C00A307AC /* Quick */; };
 		401546E126A6FB4300A307AC /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 401546E026A6FB4300A307AC /* Nimble */; };
 		401546E426A6FDDE00A307AC /* ReactorKit in Frameworks */ = {isa = PBXBuildFile; productRef = 401546E326A6FDDE00A307AC /* ReactorKit */; };
 		401546E626A6FE2F00A307AC /* HomeReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546E526A6FE2F00A307AC /* HomeReactor.swift */; };
@@ -36,6 +35,7 @@
 		401546F526A72ED500A307AC /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546F426A72ED500A307AC /* HomeCell.swift */; };
 		401546F826A840F100A307AC /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546F726A840F100A307AC /* ImageService.swift */; };
 		401546FB26A8429300A307AC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546FA26A8429300A307AC /* UIImageView+Extension.swift */; };
+		4015470126A860EE00A307AC /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 4015470026A860EE00A307AC /* Quick */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		4015469126A6F4F100A307AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4015469326A6F4F100A307AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4015469826A6F4F100A307AC /* CarrotCloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarrotCloneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4015469C26A6F4F100A307AC /* CarrotCloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotCloneTests.swift; sourceTree = "<group>"; };
+		4015469C26A6F4F100A307AC /* NetworkRepositoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRepositoryTest.swift; sourceTree = "<group>"; };
 		4015469E26A6F4F100A307AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		401546A326A6F4F100A307AC /* CarrotCloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarrotCloneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		401546A726A6F4F100A307AC /* CarrotCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrotCloneUITests.swift; sourceTree = "<group>"; };
@@ -101,9 +101,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				401546DB26A6FB1C00A307AC /* Quick in Frameworks */,
 				401546E126A6FB4300A307AC /* Nimble in Frameworks */,
 				401546D226A6FB0500A307AC /* RxTest in Frameworks */,
+				4015470126A860EE00A307AC /* Quick in Frameworks */,
 				401546D826A6FB0500A307AC /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,7 +155,7 @@
 		4015469B26A6F4F100A307AC /* CarrotCloneTests */ = {
 			isa = PBXGroup;
 			children = (
-				4015469C26A6F4F100A307AC /* CarrotCloneTests.swift */,
+				4015469C26A6F4F100A307AC /* NetworkRepositoryTest.swift */,
 				4015469E26A6F4F100A307AC /* Info.plist */,
 			);
 			path = CarrotCloneTests;
@@ -322,8 +322,8 @@
 			packageProductDependencies = (
 				401546D126A6FB0500A307AC /* RxTest */,
 				401546D726A6FB0500A307AC /* RxBlocking */,
-				401546DA26A6FB1C00A307AC /* Quick */,
 				401546E026A6FB4300A307AC /* Nimble */,
+				4015470026A860EE00A307AC /* Quick */,
 			);
 			productName = CarrotCloneTests;
 			productReference = 4015469826A6F4F100A307AC /* CarrotCloneTests.xctest */;
@@ -382,9 +382,9 @@
 				401546C826A6FAD400A307AC /* XCRemoteSwiftPackageReference "SnapKit" */,
 				401546CB26A6FAF300A307AC /* XCRemoteSwiftPackageReference "Then" */,
 				401546CE26A6FB0500A307AC /* XCRemoteSwiftPackageReference "RxSwift" */,
-				401546D926A6FB1C00A307AC /* XCRemoteSwiftPackageReference "Quick" */,
 				401546DF26A6FB4300A307AC /* XCRemoteSwiftPackageReference "Nimble" */,
 				401546E226A6FDDE00A307AC /* XCRemoteSwiftPackageReference "ReactorKit" */,
+				401546FF26A860EE00A307AC /* XCRemoteSwiftPackageReference "Quick" */,
 			);
 			productRefGroup = 4015468326A6F4EF00A307AC /* Products */;
 			projectDirPath = "";
@@ -450,7 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4015469D26A6F4F100A307AC /* CarrotCloneTests.swift in Sources */,
+				4015469D26A6F4F100A307AC /* NetworkRepositoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -793,14 +793,6 @@
 				minimumVersion = 6.2.0;
 			};
 		};
-		401546D926A6FB1C00A307AC /* XCRemoteSwiftPackageReference "Quick" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Quick/Quick";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
 		401546DF26A6FB4300A307AC /* XCRemoteSwiftPackageReference "Nimble" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Quick/Nimble";
@@ -815,6 +807,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.0.0;
+			};
+		};
+		401546FF26A860EE00A307AC /* XCRemoteSwiftPackageReference "Quick" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Quick/Quick";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -855,11 +855,6 @@
 			package = 401546CE26A6FB0500A307AC /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxBlocking;
 		};
-		401546DA26A6FB1C00A307AC /* Quick */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 401546D926A6FB1C00A307AC /* XCRemoteSwiftPackageReference "Quick" */;
-			productName = Quick;
-		};
 		401546E026A6FB4300A307AC /* Nimble */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 401546DF26A6FB4300A307AC /* XCRemoteSwiftPackageReference "Nimble" */;
@@ -869,6 +864,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 401546E226A6FDDE00A307AC /* XCRemoteSwiftPackageReference "ReactorKit" */;
 			productName = ReactorKit;
+		};
+		4015470026A860EE00A307AC /* Quick */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 401546FF26A860EE00A307AC /* XCRemoteSwiftPackageReference "Quick" */;
+			productName = Quick;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

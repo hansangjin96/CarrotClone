@@ -37,6 +37,66 @@ final class MockURLSessionDataTask: URLSessionDataTask {
 }
 
 final class MockURLSession: URLSessionType {
+    private let isInvalidStatus: Bool
+    private let dataTaskFail: Bool
+    private let noData: Bool
+    
+    init(
+        isInvalidStatus: Bool = false,
+        dataTaskFail: Bool = false,
+        noData: Bool = false
+        
+    ) {
+        self.isInvalidStatus = isInvalidStatus
+        self.dataTaskFail = dataTaskFail
+        self.noData = noData
+    }
+    
+    func dataTask(
+        with request: URLRequest, 
+        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+    ) -> URLSessionDataTask {
+        let dataTask = MockURLSessionDataTask()
+        let response = HTTPURLResponse(
+            url: URL(string: "http://carrot.mock.com")!,
+            statusCode: 200,
+            httpVersion: "2",
+            headerFields: [HTTPHeaderFields.contentType: HTTPHeaderFields.json]
+        )
+        
+        let failResponse = HTTPURLResponse(
+            url: URL(string: "http://carrot.mock.com")!,
+            statusCode: 404,
+            httpVersion: "2",
+            headerFields: [HTTPHeaderFields.contentType: HTTPHeaderFields.json]
+        ) 
+        
+        if self.isInvalidStatus {
+            completionHandler(MockURLSession.mockData, failResponse, nil) 
+        } else if self.noData {
+            completionHandler(nil, response, nil)
+        } else if self.dataTaskFail {
+            completionHandler(
+                MockURLSession.mockData, 
+                response, 
+                NSError(
+                    domain: "mockError", 
+                    code: -100, 
+                    userInfo: nil
+                )
+            )
+        } else {
+            completionHandler(MockURLSession.mockData, response, nil)            
+        }
+        
+        return dataTask
+    }
+    
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        let dataTask = MockURLSessionDataTask()
+        return dataTask
+    }
+    
     static var mockData: Data {
         return Data(
         """
@@ -111,26 +171,5 @@ final class MockURLSession: URLSessionType {
         }
         """.utf8
         )
-    }
-    
-    func dataTask(
-        with request: URLRequest, 
-        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
-    ) -> URLSessionDataTask {
-        let dataTask = MockURLSessionDataTask()
-        let response = HTTPURLResponse(
-            url: URL(string: "http://carrot.mock.com")!,
-            statusCode: 200,
-            httpVersion: "2",
-            headerFields: [HTTPHeaderFields.contentType: HTTPHeaderFields.json]
-        )
-        
-        completionHandler(MockURLSession.mockData, response, nil)
-        return dataTask
-    }
-    
-    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
-        let dataTask = MockURLSessionDataTask()
-        return dataTask
     }
 }
