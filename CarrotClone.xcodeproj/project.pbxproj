@@ -34,6 +34,8 @@
 		401546EC26A7090A00A307AC /* URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546EB26A7090A00A307AC /* URLSessionType.swift */; };
 		401546EF26A728AF00A307AC /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546EE26A728AF00A307AC /* MainTabBarController.swift */; };
 		401546F526A72ED500A307AC /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546F426A72ED500A307AC /* HomeCell.swift */; };
+		401546F826A840F100A307AC /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546F726A840F100A307AC /* ImageService.swift */; };
+		401546FB26A8429300A307AC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 401546FA26A8429300A307AC /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		401546EB26A7090A00A307AC /* URLSessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionType.swift; sourceTree = "<group>"; };
 		401546EE26A728AF00A307AC /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		401546F426A72ED500A307AC /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		401546F726A840F100A307AC /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		401546FA26A8429300A307AC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 				401546BA26A6F6C700A307AC /* Resources */,
 				401546B926A6F6B700A307AC /* Supportings */,
 				401546B526A6F62D00A307AC /* Application */,
+				401546F926A8428000A307AC /* Extension */,
 				401546B726A6F63F00A307AC /* DataLayer */,
 				401546B826A6F64C00A307AC /* BusinessLayer */,
 				401546B626A6F63800A307AC /* PresentationLayer */,
@@ -196,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				401546C626A6F8D800A307AC /* CarrotService.swift */,
+				401546F726A840F100A307AC /* ImageService.swift */,
 			);
 			path = BusinessLayer;
 			sourceTree = "<group>";
@@ -261,6 +267,14 @@
 				401546BE26A6F74A00A307AC /* Home */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		401546F926A8428000A307AC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				401546FA26A8429300A307AC /* UIImageView+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				401546FB26A8429300A307AC /* UIImageView+Extension.swift in Sources */,
 				401546C326A6F87300A307AC /* NetworkRepository.swift in Sources */,
 				401546C026A6F84D00A307AC /* Carrot.swift in Sources */,
 				4015468A26A6F4EF00A307AC /* HomeVC.swift in Sources */,
@@ -427,6 +442,7 @@
 				401546C726A6F8D800A307AC /* CarrotService.swift in Sources */,
 				401546EC26A7090A00A307AC /* URLSessionType.swift in Sources */,
 				401546E826A7025A00A307AC /* ResultBase.swift in Sources */,
+				401546F826A840F100A307AC /* ImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

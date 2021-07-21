@@ -52,11 +52,16 @@ final class HomeCell: UITableViewCell {
         $0.color = .systemBlue
     }
     
+    // MARK: Property
+    
+    private var imageDownloadTask: URLSessionDataTask?
+    
     // MARK: Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.selectionStyle = .none
         setupUI()
     }
     
@@ -64,14 +69,19 @@ final class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: LifeCycle
+    
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        imageDownloadTask?.cancel()
         
         productImage.image = .none
         titleLabel.text = .none
         timeLabel.text = .none
         locationLabel.text = .none
         priceLabel.text = .none
+        activityIndicator.stopAnimating()
     }
     
     // MARK: UI
@@ -119,18 +129,11 @@ final class HomeCell: UITableViewCell {
     // MARK: Bind
     
     func bind(with carrot: Carrot) {
-        // TODO: ImageHandling
-        do {
-            self.activityIndicator.startAnimating()
-            let imageData = try Data(contentsOf: carrot.imageURL)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.activityIndicator.stopAnimating()
-                self.productImage.image = UIImage(data: imageData)
-            }
-            
-        } catch {
-            print(error)
+        activityIndicator.startAnimating()
+        imageDownloadTask = productImage.setImage(with: carrot.imageURL) {
+            self.activityIndicator.stopAnimating()
         }
+        
         titleLabel.text = carrot.title
         locationLabel.text = carrot.location
         timeLabel.text = "* \(carrot.time)"

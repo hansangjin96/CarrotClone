@@ -13,6 +13,11 @@ protocol URLSessionType {
         with request: URLRequest, 
         completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
     ) -> URLSessionDataTask
+    
+    func dataTask(
+        with url: URL, 
+        completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void
+    ) -> URLSessionDataTask
 }
 
 extension URLSession: URLSessionType {}
@@ -65,6 +70,42 @@ final class MockURLSession: URLSessionType {
               "ggeulol": true,
               "price": 20000,
               "heart_count": 7
+            },
+            {
+              "image_url": "http://image.dongascience.com/Photo/2015/10/14454922182366.jpg",
+              "title": "Time 원피스",
+              "location": "송파구 오금동",
+              "time": "35초 전",
+              "ggeulol": true,
+              "price": 20000,
+              "heart_count": 7
+            },
+            {
+              "image_url": "https://thumb.mt.co.kr/06/2021/03/2021030917585165860_2.jpg/dims/optimize/",
+              "title": "Time 원피스",
+              "location": "송파구 오금동",
+              "time": "35초 전",
+              "ggeulol": true,
+              "price": 20000,
+              "heart_count": 7
+            },
+            {
+              "image_url": "https://cdn.edujin.co.kr/news/photo/202105/35768_68227_247.jpg",
+              "title": "Time 원피스",
+              "location": "송파구 오금동",
+              "time": "35초 전",
+              "ggeulol": true,
+              "price": 20000,
+              "heart_count": 7
+            },
+            {
+              "image_url": "https://images.mypetlife.co.kr/content/uploads/2019/09/09152948/cat-baby-4208578_1920.jpg",
+              "title": "Time 원피스",
+              "location": "송파구 오금동",
+              "time": "35초 전",
+              "ggeulol": true,
+              "price": 20000,
+              "heart_count": 7
             }
           ]
         }
@@ -85,6 +126,11 @@ final class MockURLSession: URLSessionType {
         )
         
         completionHandler(MockURLSession.mockData, response, nil)
+        return dataTask
+    }
+    
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask {
+        let dataTask = MockURLSessionDataTask()
         return dataTask
     }
 }
