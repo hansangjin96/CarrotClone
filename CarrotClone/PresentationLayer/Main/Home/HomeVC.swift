@@ -149,9 +149,19 @@ extension HomeVC: View {
         
         reactor.errorResult
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: {
-                // TODO: ErrorHandling
-                print($0)
+            .do(onNext: { [weak self] _ in 
+                self?.activityIndicator.stopAnimating()
+            })
+            .subscribe(onNext: { [weak self] error in
+                let alertController = UIAlertController(
+                    title: "Some Error Occurred",
+                    message: error.localizedDescription,
+                    preferredStyle: .alert
+                )
+                let okAction: UIAlertAction = .init(title: "confirm", style: .cancel)
+                alertController.addAction(okAction)
+                
+                self?.present(alertController, animated: true)
             })
             .disposed(by: disposeBag)
     }
